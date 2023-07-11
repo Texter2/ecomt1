@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import Header from './components/header';
 import Dropmenu from './components/dropmenu';
 import reportWebVitals from './reportWebVitals';
+import Slider from './components/slider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Header />
     <Dropmenu/>
+    <br/>
+    <Slider/>
   </React.StrictMode>
 );
 
