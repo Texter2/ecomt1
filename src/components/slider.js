@@ -1,11 +1,15 @@
 import React from "react";
-import SliderImage from "../assets/slider items/nothing.svg";
-import Banner from "../assets/slider items/12_26_banner.jpg";
+import first from "../assets/slider items/1.webp";
+import second from "../assets/slider items/2.webp";
+import third from "../assets/slider items/3.webp";
+import fourth from "../assets/slider items/4.webp";
 import { useState } from "react";
 import "./slider.css";
+import left from "../assets/left.svg";
+import right from "../assets/right.svg";
 
 const Slider = () => {
-  const [image, setImage] = useState([SliderImage, Banner]);
+  const [image, setImage] = useState([first, second, third, fourth]);
   const [count, setCount] = useState(0);
   return (
     <div className="slider-container">
@@ -17,29 +21,29 @@ const Slider = () => {
             display: "flex",
             justifyContent: "end",
             alignItems: "center",
-            position:'absolute',
-            left:'100px'
+            position: "absolute",
+            left: "100px",
           }}
         >
           <button
             onClick={() => {
               count > 0 ? setCount(count - 1) : setCount(0);
             }}
-            style={{ position: "absolute",left:'113px' }}
+            style={{ position: "absolute", left: "0px" }}
           >
-            Prev
+            <img src={left} width={"40px"} height={"100px"}></img>
           </button>
-          <div> 
-            <img src={image[count]} width="1600px" height="400px" />
-          </div>
 
+          <div>
+            <img src={image[count]} width="1550px" height="290px" />
+          </div>
           <button
             onClick={() => {
               count < image.length - 1 ? setCount(count + 1) : setCount(0);
             }}
             style={{ position: "absolute" }}
           >
-            Next
+            <img src={right} width={"40px"} height={"100px"}></img>
           </button>
         </div>
       </div>

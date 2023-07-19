@@ -1,17 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import Header from './components/header';
-import Dropmenu from './components/dropmenu';
-import reportWebVitals from './reportWebVitals';
-import Slider from './components/slider';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Header from "./components/header";
+import Dropmenu from "./components/dropmenu";
+import reportWebVitals from "./reportWebVitals";
+import Slider from "./components/slider";
+import Discount from "./components/discount";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Header />
-    <Dropmenu/>
-    <br/>
-    <Slider/>
+    <Dropmenu />
+    <br />
+    <Slider />
+    <Discount />
   </React.StrictMode>
 );
 
