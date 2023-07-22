@@ -1,6 +1,7 @@
 import image from "../assets/Capture.PNG";
 import Button from "./common/button";
 import { cilCart } from "@coreui/icons";
+import search from "../assets/search.svg";
 
 function Header() {
   return (
@@ -16,12 +17,40 @@ function Header() {
         }}
       />
 
-      <div style={{ position: "relative", bottom: "32px", left: "450px" }}>
-        <input
-          type="search"
-          placeholder="Search..."
-          style={{ width: "400px", height: "35px" }}
-        />
+      <div
+        style={{
+          position: "relative",
+          bottom: "32px",
+          left: "450px",
+          display: "flex",
+        }}
+      >
+        <div
+          style={{
+            width: "min-content",
+            backgroundColor: "white",
+            display: "flex",
+          }}
+        >
+          <input
+            type="search"
+            placeholder="Search..."
+            style={{ width: "400px", height: "35px" }}
+          />
+          <img
+            src={search}
+            style={{
+              width: "20px",
+              margin: "0px",
+              padding: 0,
+              border: "0px",
+              borderColor:'#fff',
+              backgroundColor:'#fff',
+              padding:'4px',
+              borderRadius:'2px'
+            }}
+          ></img>
+        </div>
 
         <Button
           left={"50px"}

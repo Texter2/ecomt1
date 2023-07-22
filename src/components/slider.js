@@ -27,15 +27,15 @@ const Slider = () => {
         >
           <button
             onClick={() => {
-              count > 0 ? setCount(count - 1) : setCount(0);
+              count > 0 ? setCount(count - 1) : setCount(count + 1);
             }}
             style={{ position: "absolute", left: "0px" }}
           >
-            <img src={left} width={"40px"} height={"100px"}></img>
+            <img src={left} width={"35"} height={"90px"}></img>
           </button>
 
           <div>
-            <img src={image[count]} width="1550px" height="290px" />
+            <img src={image[count]} width="min-content" height="290px" />
           </div>
           <button
             onClick={() => {
@@ -43,7 +43,7 @@ const Slider = () => {
             }}
             style={{ position: "absolute" }}
           >
-            <img src={right} width={"40px"} height={"100px"}></img>
+            <img src={right} width={"35"} height={"90"}></img>
           </button>
         </div>
       </div>
