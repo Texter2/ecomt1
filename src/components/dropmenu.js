@@ -23,7 +23,13 @@ const Dropmenu = () => {
         width: "10px",
       }}
     >
-      <div style={{ display: "flex" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
         <Menuhover image={surf} name={"Grocery"} />
         <Menuhover image={phone} name={"Mobiles"} />
         <Menuhover image={fashion} name={"Fashion"} />
