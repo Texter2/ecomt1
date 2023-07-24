@@ -11,9 +11,10 @@ import right from "../assets/right.svg";
 const Slider = () => {
   const [image, setImage] = useState([first, second, third, fourth]);
   const [count, setCount] = useState(0);
+  let timeoutId
 
   const handleOneSec = () => {
-    setTimeout(() => {
+    timeoutId = setTimeout(() => {
       if (count < image.length - 1) {
         setCount(count + 1);
       } else {
@@ -24,7 +25,10 @@ const Slider = () => {
 
   useEffect(() => {
     handleOneSec();
-  });
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [count]);
   return (
     <div className="slider-container">
       <div className="sider-transform-baner">
