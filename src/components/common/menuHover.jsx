@@ -1,22 +1,34 @@
 import React, { useState } from "react";
+import downdrop from "../../assets/downdrop.svg";
+import "./menuHover.css";
 
 const Hovermenu = ({ props }) => {
   const keysArray = Object.keys(props);
   return (
     <div
       style={{
-        width: "200px",
+        width: "400px",
         height: "200px",
         position: "absolute",
         backgroundColor: "white",
         zIndex: "1",
       }}
     >
-      <ul>
-        {keysArray?.map((el, index) => {
-          return <li key={index}>{el}</li>;
-        })}
-      </ul>
+      {keysArray?.map((el, index) => {
+        return (
+          <button
+            key={index}
+            style={{
+              height: "50px",
+              width: "200px",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            {el.replace(/_/g, " ")}
+          </button>
+        );
+      })}
     </div>
   );
 };
@@ -68,28 +80,50 @@ const Menuhover = (props) => {
   const [menuState, setMenuState] = useState(false);
 
   const handleTouchEvent = () => {
-    setMenuState(!menuState);
+    setMenuState(true);
+  };
+  const handleOutEvent = () => {
+    setMenuState(false);
   };
   return (
-    <div className="menu-list" onMouseOver={handleTouchEvent}>
+    <div
+      className="menu-list"
+      onMouseOver={handleTouchEvent}
+      onMouseOut={handleOutEvent}
+    >
       <div
         className="menu-item"
-        style={{ paddingLeft: "12px", paddingRight: "12px", border: "0px" }}
+        style={{
+          paddingLeft: "12px",
+          paddingRight: "12px",
+          border: "0px",
+          textAlign: "center",
+        }}
       >
         <a href="http://localhost:3000/">
           <img src={props.image} width="70px"></img>
         </a>
-        <div
-          style={{
-            fontSize: "14px",
-            fontFamily: "system-ui",
-            textAlign: "center",
-          }}
-        >
-          {props.name}
+        <div style={{ display: "flex" }}>
+          <div
+            style={{
+              fontSize: "14px",
+              fontFamily: "system-ui",
+              textAlign: "center",
+              fontWeight: "bold",
+            }}
+          >
+            {props.name} &nbsp;
+          </div>
+          {props.dropmenu ? (
+            <div className="rotate_1">
+              <img src={downdrop} />
+            </div>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
-      {menuState ? <Hovermenu props={data} /> : <></>}
+      {menuState && props.dropmenu ? <Hovermenu props={data} /> : <></>}
     </div>
   );
 };

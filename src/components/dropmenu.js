@@ -32,14 +32,14 @@ const Dropmenu = () => {
       >
         <Menuhover image={surf} name={"Grocery"} />
         <Menuhover image={phone} name={"Mobiles"} />
-        <Menuhover image={fashion} name={"Fashion"} />
-        <Menuhover image={electronics} name={"Electronics"} />
-        <Menuhover image={sofa} name={"Home & Furniture"} />
+        <Menuhover image={fashion} name={"Fashion"} dropmenu={true} />
+        <Menuhover image={electronics} name={"Electronics"} dropmenu={true} />
+        <Menuhover image={sofa} name={"Home & Furniture"} dropmenu={true} />
         <Menuhover image={appliances} name={"Appliances"} />
         <Menuhover image={travel} name={"Travel"} />
         <Menuhover image={offers} name={"Top Offers"} />
-        <Menuhover image={more} name={"Beauty,Toys & More"} />
-        <Menuhover image={twowheeler} name={"Two Wheelers"} />
+        <Menuhover image={more} name={"Beauty,Toys & More"} dropmenu={true} />
+        <Menuhover image={twowheeler} name={"Two Wheelers"} dropmenu={true} />
       </div>
     </span>
   );

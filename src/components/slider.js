@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import first from "../assets/slider items/1.webp";
 import second from "../assets/slider items/2.webp";
 import third from "../assets/slider items/3.webp";
@@ -11,6 +11,20 @@ import right from "../assets/right.svg";
 const Slider = () => {
   const [image, setImage] = useState([first, second, third, fourth]);
   const [count, setCount] = useState(0);
+
+  const handleOneSec = () => {
+    setTimeout(() => {
+      if (count < image.length - 1) {
+        setCount(count + 1);
+      } else {
+        setCount(0);
+      }
+    }, 1000);
+  };
+
+  useEffect(() => {
+    handleOneSec();
+  });
   return (
     <div className="slider-container">
       <div className="sider-transform-baner">
